@@ -1,0 +1,15 @@
+1)pemin olduğu klasöre git.
+2) Pem için onay verilir.
+        chmod 400 123qwe.pem(pem ismi her neyse)
+3)ssh -i 123qwe.pem ubuntu(host name)@public ip
+4)host name değişimi
+        sudo hostname name
+5)exit bağlantıyı keser. Close ile devam edilir.
+6)sudo apt update -y =nginx ile işlem yapmadan önce yapılacak olan güncelleme
+7)web kullanıcı olarak yükleme
+        sudo apt install nginx -y
+8)systemctl start nginx.service ile nginx servisi başlatılır.
+9)sudo systemctl status nginx= sistemde çalışan nginx servisinin durumunu gösterir.
+10)cd usr/share/nginx/html ile düzenleme noktasına gidilir
+11) sudo nano index.html ile sayfanın başlangıcında düzenlemeler yapılabilir.
+12)sudo systemctl restar nginx ile nginx servisi restlenir.
