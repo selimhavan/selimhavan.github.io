@@ -2,22 +2,23 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Selim Havan Giyim</title>
 
   <!-- Fontlar -->
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;900&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;700;900&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --gap-below-title: 12vh;
-      --max-content: 680px;
+      --gap-below-title: 12vh; 
+      --max-content: 680px;    
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      height: 100vh;
+
+      min-height: 100dvh;             
       background: url("Screenshot 2025-10-22 at 14.23.26.png") center center / cover no-repeat;
       font-family: 'Work Sans', sans-serif;
       color: #fff;
@@ -25,7 +26,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+
+      overflow-y: auto; 
+      text-shadow: 0 1px 3px rgba(0,0,0,0.4);
     }
 
     .content {
@@ -38,12 +41,13 @@
       align-items: center;
       padding-top: 6vh;
       animation: fade-in 1.2s ease-out both;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.4);
     }
 
+
     .brand-logo {
-      width: 360px;
-      height: 360px;
+
+      width: clamp(220px, 55vw, 360px);
+      height: auto;  
       object-fit: contain;
       margin-bottom: 16px;
       filter:
@@ -62,7 +66,7 @@
         drop-shadow(0 0 12px rgba(255,120,120,0.5));
     }
 
-    /* Çizgili başlık bloğu */
+
     .brand-block {
       display: flex;
       flex-direction: column;
@@ -71,11 +75,13 @@
       margin-bottom: clamp(72px, var(--gap-below-title), 220px);
     }
 
+
     .brand-line-top {
       width: min(880px, 94vw);
       height: 1px;
       background: rgba(255,255,255,0.85);
     }
+
 
     .brand-line-bottom {
       width: min(720px, 90vw);
@@ -83,24 +89,25 @@
       background: rgba(255,255,255,0.85);
     }
 
+
     .brand-title {
       font-family: 'Raleway', sans-serif;
       font-weight: 500;
       letter-spacing: 4px;
       line-height: 1.1;
-      font-size: clamp(3.2rem, 7vw, 6rem);
+      font-size: clamp(2.4rem, 8.5vw, 6rem);
       color: rgba(255,255,255,0.95);
       text-shadow: 0 1px 4px rgba(0,0,0,0.35);
       text-transform: uppercase;
     }
 
-    /* Info kısmı tek blok, başlık daha büyük */
+
     .info {
       max-width: var(--max-content);
       margin: 0 auto;
       color: rgba(255,255,255,0.95);
-      line-height: 1.6;
-      font-size: clamp(1rem, 1.8vw, 1.1rem);
+      font-size: clamp(0.95rem, 3.8vw, 1.1rem);
+      line-height: 1.55;
       animation: fade-in 1.6s ease-out 0.25s both;
       text-shadow: 0 1px 4px rgba(0,0,0,0.5);
     }
@@ -110,7 +117,7 @@
       font-size: 1.6rem;
       font-weight: 600;
       color: #fff;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.35rem;
     }
 
     footer {
@@ -127,6 +134,12 @@
       from { opacity: 0; transform: translateY(14px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+
+
+    @media (max-width: 480px) {
+      :root { --gap-below-title: 8vh; }
+      .brand-title { letter-spacing: 2px; }
+    }
   </style>
 </head>
 <body>
@@ -139,10 +152,10 @@
       <div class="brand-line-bottom"></div>
     </div>
 
-    <section class="info">
+    <section class="info" aria-label="Duyuru ve İletişim">
       <p>
         <span class="info-title">Selim Havan Giyim</span>
-        Yepyeni web sitemizle çok yakında sizlerle!<br>
+        Yeni web sitemizle çok yakında sizlerle!<br>
         📞 <strong>İletişim:</strong> +90 543 586 10 01
       </p>
     </section>
